@@ -31,6 +31,6 @@ export default {
   .headerContainer {
     display: flex;
     justify-content: space-between;
-    width: 40%;
+    width: 100%;
   }
 </style>

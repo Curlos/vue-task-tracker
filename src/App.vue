@@ -1,24 +1,30 @@
 <template>
   <div class="container">
-    <Header 
-      @toggle-add-task="toggleAddTask"
-      title="Task Tracker"
-      :showAddTask="showAddTask"
-    />
-    <router-view :showAddTask="showAddTask"></router-view>
-    <Footer />
+    <div class="taskTrackerContainer">
+      <div class="top">
+        <Header 
+          @toggle-add-task="toggleAddTask"
+          title="Task Tracker"
+          :showAddTask="showAddTask"
+        />
+        <router-view :showAddTask="showAddTask"></router-view>
+        <Footer />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Tasks from './components/Tasks'
 
 export default {
   name: 'App',
   components: {
     Header,
     Footer,
+    Tasks
   },
   data() {
     return {
@@ -43,13 +49,9 @@ export default {
   }
 
   .container {
-    display: flex;
-    justify-content: center;
-    text-align: center;
     border: 1px solid black;
+    border-radius: 5px;
     margin: 20px;
-    
-
   }
 
   .btn {
@@ -58,5 +60,9 @@ export default {
     color: white;
     font-size: 16px;
     padding: 16px;
+  }
+
+  .taskTrackerContainer {
+    margin: 40px;
   }
 </style>
